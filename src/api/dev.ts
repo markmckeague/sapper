@@ -103,7 +103,9 @@ class Watcher extends EventEmitter {
 		rimraf.sync(dest);
 		mkdirp.sync(dest);
 
-		const dev_port = await ports.find(10000);
+		// const dev_port = await ports.find(10000);
+
+		const dev_port = this.port;
 
 		const routes = create_routes();
 		create_main_manifests({ routes, dev_port });
